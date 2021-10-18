@@ -4,8 +4,8 @@ import { UserContext } from "../context/UserContext/UserContext";
 
 export const NavbarContainer = () => {
   const { getUser, user, addPoints } = useContext(UserContext);
-
   const [sticky, setSticky] = useState("");
+
 
   const handleAddPoints = (points) => {
     addPoints(points);
@@ -21,8 +21,9 @@ export const NavbarContainer = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll); 
     getUser();
-  }, [addPoints, user]);
+  },[ user.points]);
 
+   
   return (
     <>
       {user ? (

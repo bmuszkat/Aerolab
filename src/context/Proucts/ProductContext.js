@@ -22,25 +22,9 @@ export const ProductsProvider = ({ children }) => {
     setProductsSort(data);
   };
 
-
-
-  const ascendingSort = (a, b) => {
-    if (a.cost < b.cost) {
-      return 1;
-    }
-    if (a.cost > b.cost) {
-      return -1;
-    }
-  };
-
-  const descendingSort = (a, b) => {
-    if (a.cost < b.cost) {
-      return -1;
-    }
-    if (a.cost > b.cost) {
-      return 1;
-    }
-  };
+  const Sort = (a, b) => {
+    return (a.cost < b.cost) ? 1 : -1;
+  };   
 
   const handleSortOption = (option) => {
     if(productsSort)
@@ -57,12 +41,11 @@ export const ProductsProvider = ({ children }) => {
     setProductsSort(
       option !== "default"
         ? prd.slice().sort((a, b) => {
-            if (option === "ascending") {
-              return ascendingSort(a, b);
-            }
-            if (option === "descending") {
-              return descendingSort(a, b);
-            }
+          if (option === "ascending") {
+            return Sort(a, b);
+          }else {
+            return Sort(a, b) * -1;
+          }
           })
         : 
           (textToFilter !== ""? filter(products, textToFilter) : products)

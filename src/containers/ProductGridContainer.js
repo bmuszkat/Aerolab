@@ -6,7 +6,7 @@ import { gridProductsPerPage } from "../utils/constants";
 export const ProductGridContainer = () => {
   const productsPerPage = gridProductsPerPage;
 
-  const { getProducts, productsSort, handleSortOption, handleFilter, page, setPage } =
+  const { getProducts, productsSort, handleSortOption, handleFilter, page, setPage,textToFilter } =
     useContext(ProductsContext);
 
   const beginIndex = (page - 1) * productsPerPage;
@@ -30,7 +30,7 @@ export const ProductGridContainer = () => {
         <Grid
           products={productsSort.slice(beginIndex, endIndex)}
           page={page}
-          firstProductsSegment={endIndex}
+          firstProductsSegment={textToFilter !== '' ? productsSort.length : endIndex}
           lastProductsSegment={productsSort.length}
           prevPage={page > 1 && prevPage}
           nextPage={endIndex < productsSort.length && nextPage}

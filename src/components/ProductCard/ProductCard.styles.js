@@ -19,7 +19,7 @@ export const ProductCardInner = styled.div`
 
   transition: bottom 0.3s, box-shadow 0.3s;
 
-  cursor: pointer;
+
 
   &:hover {
     bottom: 5px;
@@ -86,6 +86,7 @@ export const addUnit = styled.button`
     font-weight: 300;
     padding-left: 10px;
     font-size:33px !important;
+    cursor: pointer;
   }
 `;
 
@@ -106,6 +107,7 @@ export const removeUnit = styled.button`
     font-weight: 300;
     padding-left: 14px;
     font-size:33px !important;
+    cursor: pointer;
   }
 `;
 

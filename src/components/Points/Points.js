@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import CoinIcon from "../../assets/icons/coin.svg";
 import { giftPoints } from "../../utils/constants";
-import { PointsNumber, PointsContainer,Coin, AddPoints,StyledMenu, Plus} from "./Points.styles";
+import { PointsNumber, PointsContainer,Coin, AddPoints} from "./Points.styles";
 
 export const Points = (props) => {
   const { points,handleAddPoints } = props;

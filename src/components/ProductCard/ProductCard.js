@@ -5,6 +5,7 @@ export const ProductCard = (props) => {
   const { product, handleRedeem, costRemaining, userPoints } = props;
   const [available, setAvailable] = useState(false);
   const [totalRemaining, setTotalRemaining] = useState(costRemaining); 
+  const [total, setTotal] = useState(false);
 
   const handleAvailabilityByTotal = (total) => {
     setAvailable(total > userPoints);
@@ -17,17 +18,19 @@ export const ProductCard = (props) => {
   const AddToCart = () => {
     product.quantity++;
     product.total = product.cost * product.quantity;
+    setTotal(product.cost * product.quantity);
   }
 
   const RemoveToCart = () => {
     product.quantity--;
     product.total = product.cost * product.quantity;
+    setTotal(product.cost * product.quantity);
   }
 
   useEffect(() => {
     handleAvailabilityByTotal(product.total);
     handleTotalRemaining(product.total);
-  }, [product.total]);
+  }, [product.total,total]);
 
   return (
     <S.ProductCardWrapper>
@@ -39,7 +42,6 @@ export const ProductCard = (props) => {
         <S.ProductCardDetail>
           <S.ItemCategory>{product.category}</S.ItemCategory>
           <S.ItemName>{product.name}</S.ItemName>
-          <S.Quantity>Quanity: {product.quantity}</S.Quantity>
         </S.ProductCardDetail>
         {!available ? (
           <> 
@@ -68,9 +70,9 @@ export const ProductCard = (props) => {
             ) : null
             }
             <S.addUnit onClick={() =>  AddToCart()}>+</S.addUnit>
-              <S.ItemPoints>{product.total}</S.ItemPoints>
+              <S.ItemPoints>{product.total} ({product.quantity} units)</S.ItemPoints>
             </S.ItemOverlay>
-            <S.CostBadge>You need {totalRemaining}</S.CostBadge>
+            <S.CostBadge>You need {totalRemaining} </S.CostBadge>
           </>
         )}
       </S.ProductCardInner>

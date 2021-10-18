@@ -32,38 +32,6 @@ export const SortingBar = styled.ul`
   }
 `;
 
-export const SortingOption = styled.li`
-  padding: 0.9rem 1.5rem;
-  margin: 0 0.75rem;
-
-  background-color: #ededed;
-
-  font-size: 1.67vw;
-  color: #a3a3a3;
-  letter-spacing: -0.15px;
-  text-align: left;
-
-  border-radius: 100px;
-
-  transition: background-color 0.3s;
-
-  cursor: pointer;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-
-  &:hover {
-    background: #e5e5e5;
-  }
-
-  &.selected {
-    background: #0ad4fa;
-    color: #fff;
-  }
-`;
-
-
 export const Button = styled.button`
  
   background-color: #ededed;

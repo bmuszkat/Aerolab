@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ProductsContext } from "../../context/Proucts/ProductContext";
-import {SortWrapper,Text, SortingBar, SortingOption, ButtonGroup, ButtonToggle} from "./SortingOptions.styles";
+import {SortWrapper,Text, SortingBar, ButtonGroup, ButtonToggle} from "./SortingOptions.styles";
 
 export const SortingOptions = () => {
   const [activeOption, setActiveOption] = useState(0);
@@ -9,34 +9,7 @@ export const SortingOptions = () => {
   return (
     <SortWrapper>
       <Text>Sort By:</Text>
-      <SortingBar>
-        {/* <SortingOption
-          onClick={() => {
-            handleSortOption("default");
-            setActiveOption(0);
-          }}
-          className={activeOption === 0 ? "selected" : null}
-        >
-          Most Recent
-        </SortingOption>
-        <SortingOption
-          onClick={() => {
-            handleSortOption("descending");
-            setActiveOption(1);
-          }}
-          className={activeOption === 1 ? "selected" : null}
-        >
-          Lowest Price
-        </SortingOption>
-        <SortingOption
-          onClick={() => {
-            handleSortOption("ascending");
-            setActiveOption(2);
-          }}
-          className={activeOption === 2 ? "selected" : null}
-        >
-          Highest Price
-        </SortingOption> */}
+      <SortingBar>     
         <ButtonGroup>
           <ButtonToggle onClick={() => {
                             handleSortOption("default");

@@ -4,6 +4,7 @@ import { NavbarContainer } from "./containers/NavBarContainer";
 import { ProductGridContainer } from "./containers/ProductGridContainer";
 import AppContext from "./context/AppContext";
 import { PageContent } from "./components/PageContent/PageContent";
+import { Footer } from "./components/Footer/Footer";
 
 
 
@@ -18,6 +19,7 @@ export const App = () => {
             <ProductGridContainer />
           </PageContent>
         </Fragment>
+        <Footer></Footer>
       </AppContext>
     </div>
   );

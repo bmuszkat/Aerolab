@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [points, setPoints] = useState("");
 
-  const getUser = async () => {
+  const getUser = async  () => {
     try {
       const { data } = await api.get("/user/me");
       setUser(data);
@@ -22,10 +22,12 @@ export const UserProvider = ({ children }) => {
     } catch (error) {
       console.log(error?.response);
     }
+
+    getUser();
   };
 
   const handleRedeem = async (productId, productCost, quantity) => {
-    //Aca hago un for por la cantidad de productos a canjear, pero lo ideal seria que pueda enviarlo como parametro
+    //I am doing a for because the API don't support sending quantity as parameter.
     for(let i = 0; i < quantity; i++){
       try {
         await api.post("/redeem", { productId: productId });
@@ -34,6 +36,8 @@ export const UserProvider = ({ children }) => {
         console.log(error?.response);
       }
     }
+
+    getUser();
   };
 
   return (

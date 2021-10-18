@@ -54,7 +54,7 @@ export const Grid = (props) => {
       : <EmptyProducts></EmptyProducts>}
       </>
       
-
+      <Paginator prevPage={prevPage} nextPage={nextPage} />
     </GridContainer>
   );
 };
