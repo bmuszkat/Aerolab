@@ -14,10 +14,5 @@ export const FilterProducts = (props) => {
 
   return (
     <FilterTextBox placeholder="Text to filter" value={filterText} onChange={(e) => setFilterText(e.target.value)}/>
-   
-    // <input type="text" 
-    // value={filterText}
-    // onChange={(e) => setFilterText(e.target.value)}
-    //  />
   );
 };

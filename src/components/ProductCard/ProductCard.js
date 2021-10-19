@@ -32,6 +32,11 @@ export const ProductCard = (props) => {
     handleTotalRemaining(product.total);
   }, [product.total,total]);
 
+  useEffect(() => {
+    product.total = product.cost * product.quantity;
+    handleAvailabilityByTotal(product.total);
+  }, []);
+
   return (
     <S.ProductCardWrapper>
       <S.ProductCardInner>
