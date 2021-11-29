@@ -5,7 +5,7 @@ export const ProductCard = (props) => {
   const { product, handleRedeem, costRemaining, userPoints } = props;
   const [available, setAvailable] = useState(false);
   const [totalRemaining, setTotalRemaining] = useState(costRemaining); 
-  const [total, setTotal] = useState(false);
+  const [total, setTotal] = useState(product.cost);
 
   const handleAvailabilityByTotal = (total) => {
     setAvailable(total > userPoints);
@@ -32,10 +32,11 @@ export const ProductCard = (props) => {
     handleTotalRemaining(product.total);
   }, [product.total,total]);
 
-  useEffect(() => {
-    product.total = product.cost * product.quantity;
+   useEffect(() => {
+    product.total = product.cost * product.quantity
     handleAvailabilityByTotal(product.total);
-  }, []);
+    handleTotalRemaining(product.total);
+  });
 
   return (
     <S.ProductCardWrapper>

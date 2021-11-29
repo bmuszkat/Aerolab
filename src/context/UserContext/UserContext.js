@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { api } from "../../api/api";
 
 export const UserContext = createContext();
@@ -25,7 +25,7 @@ export const UserProvider = ({ children }) => {
 
     getUser();
   };
-
+  
   const handleRedeem = async (productId, productCost, quantity) => {
     //I am doing a for because the API don't support sending quantity as parameter.
     for(let i = 0; i < quantity; i++){

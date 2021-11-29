@@ -86,10 +86,10 @@ export const addUnit = styled.button`
     font-weight: 300;
     padding-left: 10px;
     font-size:33px !important;
-    cursor: pointer;
+    cursor: pointer;    
+    border: 2px solid #ededed;
   }
 `;
-
 
 export const removeUnit = styled.button`
     display: flex;
@@ -107,7 +107,8 @@ export const removeUnit = styled.button`
     font-weight: 300;
     padding-left: 14px;
     font-size:33px !important;
-    cursor: pointer;
+    cursor: pointer;    
+    border: 2px solid #ededed;
   }
 `;
 

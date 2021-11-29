@@ -26,7 +26,7 @@ export const Carrousel = (props) => {
             >
             <Slider>         
                 {slides.map((slide, index) => (
-                <Slide index={index}>                 
+                <Slide key={index} index={index}>                 
                     <Image  image={slide}/>
                 </Slide>
                 ))}

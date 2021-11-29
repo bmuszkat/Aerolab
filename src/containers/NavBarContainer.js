@@ -21,7 +21,7 @@ export const NavbarContainer = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll); 
     getUser();
-  },[ user.points]);
+  },[user.points]);
 
    
   return (

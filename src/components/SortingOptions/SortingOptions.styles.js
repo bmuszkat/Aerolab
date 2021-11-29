@@ -33,7 +33,8 @@ export const SortingBar = styled.ul`
 `;
 
 export const Button = styled.button`
- 
+display: flex;
+flex-direction: column;
   background-color: #ededed;
   color: #a3a3a3;
   font-size: 20px;
@@ -69,6 +70,8 @@ export const ButtonToggle = styled(Button)`
 `;
 
 export const ButtonGroup = styled.div`
-display: flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 `;
 
